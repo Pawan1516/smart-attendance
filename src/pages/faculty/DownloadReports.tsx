@@ -99,20 +99,20 @@ ${data.map(s => `${s.id.padEnd(12)} | ${s.name.padEnd(25)} | ${s.attendance}%`).
           <div className="w-16 h-16 bg-emerald-500/10 rounded-3xl flex items-center justify-center text-emerald-500 mx-auto mb-4 border border-emerald-500/20">
              <Database size={32} strokeWidth={2.5} />
           </div>
-          <h2 className="text-4xl font-black text-white tracking-tighter uppercase">Data Export</h2>
-          <p className="text-[11px] font-black text-slate-600 uppercase tracking-widest leading-relaxed">Synthesize institutional reports from node metadata</p>
+          <h2 className="text-4xl font-black text-white tracking-tighter uppercase">Download Reportt</h2>
+          <p className="text-[11px] font-black text-slate-600 uppercase tracking-widest leading-relaxed">Select batch and date to generate report</p>
         </div>
 
         <div className="space-y-8">
            <div className="space-y-3">
-              <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-1">Target Cluster (Batch)</label>
+              <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-1">Batch</label>
               <div className="relative group">
                 <select 
                   value={selectedBatch}
                   onChange={(e) => setSelectedBatch(e.target.value)}
                   className="w-full bg-[#121212] border border-white/5 group-hover:border-white/10 rounded-2xl px-6 py-5 text-sm font-bold text-slate-300 outline-none appearance-none focus:ring-2 focus:ring-primary/20 transition-all cursor-pointer"
                 >
-                   <option value="">Select Target Node...</option>
+                   <option value="">Select Batch</option>
                    {BATCHES.map(b => <option key={b} value={b}>{b}</option>)}
                 </select>
                 <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-700 pointer-events-none group-hover:text-slate-400 transition-colors" size={18} />
@@ -141,7 +141,7 @@ ${data.map(s => `${s.id.padEnd(12)} | ${s.name.padEnd(25)} | ${s.attendance}%`).
               <div className={`w-20 h-20 bg-rose-500/5 border border-white/5 rounded-3xl flex items-center justify-center text-rose-500 transition-all shadow-xl ${!isSynthesizing && 'group-hover:bg-rose-500 group-hover:text-black group-hover:shadow-rose-500/10'}`}>
                  {isSynthesizing ? <Loader2 className="animate-spin" size={28} /> : <FileText size={28} />}
               </div>
-              <span className={`text-[11px] font-black uppercase tracking-[0.3em] transition-colors ${!isSynthesizing ? 'text-slate-600 group-hover:text-white' : 'text-slate-700'}`}>PDF Matrix</span>
+              <span className={`text-[11px] font-black uppercase tracking-[0.3em] transition-colors ${!isSynthesizing ? 'text-slate-600 group-hover:text-white' : 'text-slate-700'}`}>PDF </span>
            </button>
            
            <button 
@@ -152,7 +152,7 @@ ${data.map(s => `${s.id.padEnd(12)} | ${s.name.padEnd(25)} | ${s.attendance}%`).
               <div className={`w-20 h-20 bg-emerald-500/5 border border-white/5 rounded-3xl flex items-center justify-center text-emerald-500 transition-all shadow-xl ${!isSynthesizing && 'group-hover:bg-emerald-500 group-hover:text-black group-hover:shadow-emerald-500/10'}`}>
                  {isSynthesizing ? <Loader2 className="animate-spin" size={28} /> : <FileSpreadsheet size={28} />}
               </div>
-              <span className={`text-[11px] font-black uppercase tracking-[0.3em] transition-colors ${!isSynthesizing ? 'text-slate-600 group-hover:text-white' : 'text-slate-700'}`}>Spreadsheet</span>
+              <span className={`text-[11px] font-black uppercase tracking-[0.3em] transition-colors ${!isSynthesizing ? 'text-slate-600 group-hover:text-white' : 'text-slate-700'}`}>Excel</span>
            </button>
         </div>
 
@@ -166,13 +166,13 @@ ${data.map(s => `${s.id.padEnd(12)} | ${s.name.padEnd(25)} | ${s.attendance}%`).
            {downloadStatus === 'success' && (
              <div className="flex items-center gap-2 text-[10px] font-black text-emerald-500 uppercase tracking-[0.2em] animate-in fade-in slide-in-from-bottom-2">
                 <CheckCircle2 size={14} />
-                Download Initialized Successfully
+                Download  Successfully..
              </div>
            )}
            {downloadStatus === 'error' && (
              <div className="flex items-center gap-2 text-[10px] font-black text-rose-500 uppercase tracking-[0.2em]">
                 <AlertCircle size={14} />
-                Error Synthesizing Report
+                failed to generate report. Try again.
              </div>
            )}
         </div>

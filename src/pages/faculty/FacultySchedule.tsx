@@ -101,11 +101,11 @@ const FacultySchedulePage: React.FC = () => {
               <Calendar size={28} />
             </div>
             <div>
-              <h1 className="text-4xl font-black text-white tracking-tighter uppercase leading-none">Teaching Matrix</h1>
+              <h1 className="text-4xl font-black text-white tracking-tighter uppercase leading-none">My Schedule</h1>
               <div className="flex items-center gap-3 mt-2">
-                <p className="text-[10px] font-black text-primary uppercase tracking-widest">Faculty Assignment Log</p>
+                <p className="text-[10px] font-black text-primary uppercase tracking-widest">Today's Schedule </p>
                 <div className="w-1 h-1 rounded-full bg-slate-800"></div>
-                <p className="text-[10px] font-black text-slate-600 uppercase tracking-widest">IARE Academic Hub</p>
+                <p className="text-[10px] font-black text-slate-600 uppercase tracking-widest">Faculty </p>
               </div>
             </div>
           </div>
@@ -129,7 +129,7 @@ const FacultySchedulePage: React.FC = () => {
               <div className="space-y-2">
                  <div className="flex items-center gap-3">
                     <Activity size={12} className="text-emerald-500" />
-                    <span className="text-[10px] font-black text-emerald-500 uppercase tracking-[0.4em]">Node Sync: Active</span>
+                    <span className="text-[10px] font-black text-emerald-500 uppercase tracking-[0.4em]"> Active</span>
                  </div>
                  <h3 className="text-2xl font-black text-white uppercase tracking-tighter leading-none">Standard Duty Cycle</h3>
                  <p className="text-slate-600 text-[9px] font-black uppercase tracking-[0.2em]">Institutional workload synchronized with cluster demand.</p>
@@ -155,7 +155,7 @@ const FacultySchedulePage: React.FC = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <div className="w-1.5 h-6 bg-primary rounded-full shadow-[0_0_15px_rgba(255,95,53,0.5)]"></div>
-            <h2 className="text-xl font-black text-white uppercase tracking-widest">Active Duty Sequences</h2>
+            <h2 className="text-xl font-black text-white uppercase tracking-widest">upcoming Sessions</h2>
           </div>
           <div className="flex items-center gap-3 px-4 py-2 bg-white/5 rounded-full border border-white/5">
              <Binary size={10} className="text-slate-800" />
@@ -173,7 +173,7 @@ const FacultySchedulePage: React.FC = () => {
       {/* Visual Footnote */}
       <div className="text-center pt-10">
         <p className="text-[9px] font-black text-slate-800 uppercase tracking-[1em]">
-          Institutional Temporal Ledger • Secure Faculty Node
+          IARE • CAREER DEVELOPMENT CENTER 
         </p>
       </div>
 

@@ -36,10 +36,10 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout }) => {
   ];
 
   const facultyNavItems = [
-    { name: 'Faculty Hub', path: '/dashboard', icon: LayoutDashboard },
+    { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
     { name: 'My Schedule', path: '/faculty/schedule', icon: Calendar },
     { name: 'Attendance', path: '/attendance', icon: QrCode },
-    { name: 'Matrix Board', path: '/attendance/board', icon: FileText },
+    { name: 'AttendanceBoard', path: '/attendance/board', icon: FileText },
     { name: 'Leaderboard', path: '/leaderboard', icon: Trophy },
     { name: 'Reports', path: '/reports/download', icon: History },
     { name: 'Profile', path: '/profile', icon: UserIcon },

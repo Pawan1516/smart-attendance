@@ -66,8 +66,8 @@ const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ user }) => {
                 <Trophy className="text-primary" size={28} />
              </div>
              <div>
-                <h2 className="text-3xl font-black text-white tracking-tighter uppercase leading-none">Ranking <span className="text-slate-500 font-medium">Matrix</span></h2>
-                <p className="text-[9px] font-black text-slate-600 uppercase tracking-[0.4em] mt-1">Live Global Standing Terminal</p>
+                <h2 className="text-3xl font-black text-white tracking-tighter uppercase leading-none">LeaderBoard <span className="text-slate-500 font-medium"></span></h2>
+                <p className="text-[9px] font-black text-slate-600 uppercase tracking-[0.4em] mt-1">Institute Student ranking</p>
              </div>
           </div>
         </div>
@@ -95,7 +95,7 @@ const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ user }) => {
           {/* Table Head */}
           <div className="grid grid-cols-12 gap-4 px-8 py-6 text-[10px] font-black text-slate-600 uppercase tracking-[0.3em] border-b border-white/5 bg-white/[0.01]">
             <div className="col-span-1">Rank</div>
-            <div className="col-span-3">Identity Node</div>
+            <div className="col-span-3">Student </div>
             <div className="col-span-2 text-center">LeetCode</div>
             <div className="col-span-2 text-center">GFG Index</div>
             <div className="col-span-2 text-center">Chef Score</div>
@@ -103,7 +103,7 @@ const LeaderboardPage: React.FC<LeaderboardPageProps> = ({ user }) => {
               className="col-span-2 text-right flex items-center justify-end gap-2 cursor-pointer hover:text-white transition-colors"
               onClick={handleSort}
             >
-              Aggregate {sortOrder === 'desc' ? <ArrowDown size={14}/> : sortOrder === 'asc' ? <ArrowUp size={14}/> : <ArrowUpDown size={14} className="opacity-30" />}
+              Total Score {sortOrder === 'desc' ? <ArrowDown size={14}/> : sortOrder === 'asc' ? <ArrowUp size={14}/> : <ArrowUpDown size={14} className="opacity-30" />}
             </div>
           </div>
 

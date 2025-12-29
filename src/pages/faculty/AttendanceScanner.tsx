@@ -98,8 +98,8 @@ const AttendanceScanner: React.FC = () => {
               <Zap size={20} fill="currentColor" />
            </div>
            <div>
-              <h1 className="text-xl font-black text-white tracking-tighter uppercase leading-none">Optical Scan</h1>
-              <p className="text-[9px] font-black text-slate-500 uppercase tracking-widest mt-1">Live Roster Verification</p>
+              <h1 className="text-xl font-black text-white tracking-tighter uppercase leading-none"> Scanning</h1>
+              <p className="text-[9px] font-black text-slate-500 uppercase tracking-widest mt-1">Live Verification</p>
            </div>
         </div>
         <button 
@@ -149,9 +149,9 @@ const AttendanceScanner: React.FC = () => {
          <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
                <History size={14} className="text-primary" />
-               <h3 className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Recent Activity Trace</h3>
+               <h3 className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Recent Activity</h3>
             </div>
-            <span className="text-[9px] font-black text-slate-800 uppercase tracking-widest">{scannedStudents.length} Nodes detected</span>
+            <span className="text-[9px] font-black text-slate-800 uppercase tracking-widest">{scannedStudents.length} Stusent detected</span>
          </div>
 
          <div className="flex-1 overflow-x-auto flex gap-4 custom-scrollbar pb-2">

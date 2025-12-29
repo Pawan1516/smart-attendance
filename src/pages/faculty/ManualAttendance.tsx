@@ -83,23 +83,23 @@ const ManualAttendance: React.FC = () => {
               <ChevronLeft size={24} />
             </button>
             <div>
-               <h2 className="text-4xl font-black text-white tracking-tighter uppercase leading-none">Manual Ledger</h2>
+               <h2 className="text-4xl font-black text-white tracking-tighter uppercase leading-none">Select Students</h2>
                <div className="flex items-center gap-3 mt-2">
                  <p className="text-[10px] font-black text-primary uppercase tracking-widest">{course}</p>
                  <div className="w-1 h-1 rounded-full bg-slate-800"></div>
-                 <p className="text-[10px] font-black text-slate-600 uppercase tracking-widest">Target: {batches.join(', ')}</p>
+                 <p className="text-[10px] font-black text-slate-600 uppercase tracking-widest">Batch: {batches.join(', ')}</p>
                </div>
             </div>
          </div>
 
          <div className="flex items-center gap-4 bg-brand-navy border border-white/5 px-8 py-5 rounded-[2.5rem] shadow-2xl">
             <div className="text-right">
-               <p className="text-[9px] font-black text-slate-600 uppercase tracking-widest mb-1">Nodes Detected</p>
+               <p className="text-[9px] font-black text-slate-600 uppercase tracking-widest mb-1">Student Detected</p>
                <p className="text-3xl font-black text-emerald-500 tabular-nums tracking-tighter leading-none">{presentIds.size}</p>
             </div>
             <div className="w-px h-10 bg-white/10 mx-4"></div>
             <div className="text-right">
-               <p className="text-[9px] font-black text-slate-600 uppercase tracking-widest mb-1">Total Cluster</p>
+               <p className="text-[9px] font-black text-slate-600 uppercase tracking-widest mb-1">Total students</p>
                <p className="text-3xl font-black text-white tabular-nums tracking-tighter leading-none">{students.length}</p>
             </div>
          </div>
@@ -115,14 +115,14 @@ const ManualAttendance: React.FC = () => {
            </div>
            <input 
              type="text" 
-             placeholder="FILTER IDENTITY NODE..." 
+             placeholder="Search by Roll Number or Name..." 
              className="w-full bg-[#080808] border border-white/5 rounded-[2.5rem] pl-16 pr-8 py-5 text-[11px] font-black uppercase tracking-[0.2em] text-white placeholder:text-slate-900 outline-none focus:border-primary/50 focus:ring-4 focus:ring-primary/5 transition-all duration-300"
              value={searchTerm}
              onChange={(e) => setSearchTerm(e.target.value)}
            />
            <div className="absolute right-6 top-1/2 -translate-y-1/2 hidden sm:flex items-center gap-2 px-3 py-1 bg-white/5 rounded-lg border border-white/5">
               <Binary size={10} className="text-slate-800" />
-              <span className="text-[8px] font-black text-slate-800 uppercase tracking-widest">SYNC_LIVE</span>
+              <span className="text-[8px] font-black text-slate-800 uppercase tracking-widest">LIVE</span>
            </div>
         </div>
 
@@ -180,7 +180,7 @@ const ManualAttendance: React.FC = () => {
              <div className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mb-4">
                 <SearchX size={32} className="text-slate-500" />
              </div>
-             <p className="text-[11px] font-black uppercase tracking-[0.5em] text-slate-400">NO NODES DETECTED IN CLUSTER FILTER</p>
+             <p className="text-[11px] font-black uppercase tracking-[0.5em] text-slate-400">No of STUDENTS DETECTED</p>
           </div>
         )}
       </div>
@@ -189,13 +189,13 @@ const ManualAttendance: React.FC = () => {
       <div className="fixed bottom-0 left-0 right-0 md:left-64 bg-black/95 backdrop-blur-3xl border-t border-white/5 p-8 flex items-center justify-between z-[100] shadow-[0_-30px_60px_rgba(0,0,0,0.95)] px-10">
          <div className="flex items-center gap-8">
             <div className="flex flex-col">
-               <span className="text-[9px] font-black text-slate-600 uppercase tracking-widest mb-1">Active Batch Load</span>
+               <span className="text-[9px] font-black text-slate-600 uppercase tracking-widest mb-1">Active Students</span>
                <span className="text-3xl font-black text-white tabular-nums tracking-tighter leading-none">{presentIds.size} <span className="text-xs text-slate-700">/ {students.length}</span></span>
             </div>
             <div className="h-10 w-px bg-white/10 hidden sm:block"></div>
             <div className="hidden sm:flex items-center gap-3">
                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.5)]"></div>
-               <span className="text-[10px] font-black text-emerald-500 uppercase tracking-widest">Protocol Sync Ready</span>
+               <span className="text-[10px] font-black text-emerald-500 uppercase tracking-widest">Attendance</span>
             </div>
          </div>
          
@@ -209,14 +209,14 @@ const ManualAttendance: React.FC = () => {
            }`}
          >
            <ShieldCheck size={18} />
-           Commit Session
+           Submit
          </button>
       </div>
 
       {/* Footer Trace */}
       <div className="text-center pt-10">
         <p className="text-[9px] font-black text-slate-800 uppercase tracking-[1em]">
-          Institutional Ledger Protocol 3-X Active • Manual Override Secure
+          IARE  - CAREER DEVELOPMENT CENTER
         </p>
       </div>
     </div>

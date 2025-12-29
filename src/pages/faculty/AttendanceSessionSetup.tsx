@@ -40,10 +40,10 @@ const AttendanceSessionSetup: React.FC = () => {
             {mode === 'manual' ? <UserCheck size={24} /> : <QrCode size={24} />}
           </div>
           <h1 className="text-4xl font-black text-white tracking-tighter uppercase leading-none">
-            {mode === 'manual' ? 'Manual Ledger' : 'Optical Matrix'}
+            {mode === 'manual' ? 'Mark   Attendance   Manually' : 'Mark Session Attendance'}
           </h1>
           <p className="text-[11px] font-black text-slate-600 uppercase tracking-[0.4em]">
-            STEP {step}: {step === 1 ? 'CLUSTER DEFINITION' : 'PROTOCOL ASSIGNMENT'}
+            STEP {step}: {step === 1 ? 'Select Batches' : 'Select Course'}
           </p>
         </div>
 
@@ -81,25 +81,25 @@ const AttendanceSessionSetup: React.FC = () => {
         ) : (
           <div className="space-y-10 animate-in slide-in-from-right duration-500">
              <div className="p-10 bg-white/5 rounded-[2.5rem] border border-white/5">
-                <p className="text-[10px] font-black text-slate-600 uppercase tracking-[0.4em] mb-6 px-2 text-center">Global Course Header</p>
+                <p className="text-[10px] font-black text-slate-600 uppercase tracking-[0.4em] mb-6 px-2 text-center"> Course</p>
                 <div className="relative">
                   <select 
                      className="w-full bg-[#0a0a0a] border border-white/10 px-8 py-5 rounded-2xl text-sm font-bold text-slate-300 outline-none appearance-none focus:ring-2 focus:ring-primary/20"
                      onChange={(e) => setSelectedCourse(e.target.value)}
                    >
-                     <option value="">Select Modular course...</option>
+                     <option value="">Select course...</option>
                      {COURSES.map(c => <option key={c} value={c}>{c}</option>)}
                   </select>
                 </div>
              </div>
 
              <div className="space-y-6">
-                <h4 className="text-[10px] font-black text-slate-800 uppercase tracking-[0.5em] text-center">Active Target Nodes</h4>
+                <h4 className="text-[10px] font-black text-slate-800 uppercase tracking-[0.5em] text-center">Active Batch</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {selectedBatches.map(batch => (
                     <div key={batch} className="p-6 bg-white/5 border border-white/5 rounded-3xl flex items-center justify-between">
                        <h5 className="text-sm font-black text-white uppercase tracking-tighter">{batch}</h5>
-                       <span className="text-[8px] font-black text-slate-700 uppercase tracking-widest bg-white/5 px-3 py-1 rounded-full">Initialized</span>
+                       <span className="text-[8px] font-black text-slate-700 uppercase tracking-widest bg-white/5 px-3 py-1 rounded-full">selectedBatch</span>
                     </div>
                   ))}
                 </div>
@@ -117,7 +117,7 @@ const AttendanceSessionSetup: React.FC = () => {
                 : 'bg-white/5 text-slate-800 shadow-none cursor-not-allowed border border-white/5'
             }`}
           >
-            {step === 1 ? 'Execute Protocol' : (mode === 'manual' ? 'Initialize Checklist' : 'Deploy Verification Node')} 
+            {step === 1 ? 'Proceed' : (mode === 'manual' ? 'Get Student' : 'Proceed')} 
             {step === 2 ? (mode === 'manual' ? <UserCheck size={18} /> : <QrCode size={18} />) : <ArrowRight size={18} />}
           </button>
         </div>

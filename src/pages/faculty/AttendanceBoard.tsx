@@ -113,8 +113,8 @@ const AttendanceBoard: React.FC = () => {
                <FileText size={28} />
             </div>
             <div>
-              <h2 className="text-4xl font-black text-white tracking-tighter uppercase leading-none">Matrix Control</h2>
-              <p className="text-[10px] font-black text-slate-600 uppercase tracking-widest mt-2">Distributed Institutional Personnel Ledger</p>
+              <h2 className="text-4xl font-black text-white tracking-tighter uppercase leading-none">Attendance Board</h2>
+              <p className="text-[10px] font-black text-slate-600 uppercase tracking-widest mt-2"></p>
             </div>
          </div>
          
@@ -141,7 +141,7 @@ const AttendanceBoard: React.FC = () => {
          <div className="glass-card p-8 border-l-4 border-l-emerald-500 flex justify-between items-center group">
             <div className="space-y-1">
                <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Today Present</p>
-               <h3 className="text-4xl font-black text-white tracking-tighter tabular-nums">{stats.present} <span className="text-xs text-slate-700">NODES</span></h3>
+               <h3 className="text-4xl font-black text-white tracking-tighter tabular-nums">{stats.present} <span className="text-xs text-slate-700">Students</span></h3>
             </div>
             <div className="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-500 group-hover:scale-110 transition-transform">
                <CheckCircle2 size={24} />
@@ -150,7 +150,7 @@ const AttendanceBoard: React.FC = () => {
          <div className="glass-card p-8 border-l-4 border-l-rose-500 flex justify-between items-center group">
             <div className="space-y-1">
                <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Today Absent</p>
-               <h3 className="text-4xl font-black text-white tracking-tighter tabular-nums">{stats.absent} <span className="text-xs text-slate-700">NODES</span></h3>
+               <h3 className="text-4xl font-black text-white tracking-tighter tabular-nums">{stats.absent} <span className="text-xs text-slate-700">Students</span></h3>
             </div>
             <div className="w-12 h-12 bg-rose-500/10 rounded-2xl flex items-center justify-center text-rose-500 group-hover:scale-110 transition-transform">
                <XCircle size={24} />
@@ -158,8 +158,8 @@ const AttendanceBoard: React.FC = () => {
          </div>
          <div className="glass-card p-8 border-l-4 border-l-primary flex justify-between items-center group">
             <div className="space-y-1">
-               <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Session Velocity</p>
-               <h3 className="text-4xl font-black text-white tracking-tighter tabular-nums">{stats.rate}% <span className="text-xs text-slate-700">SYNC</span></h3>
+               <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Attendance Rate</p>
+               <h3 className="text-4xl font-black text-white tracking-tighter tabular-nums">{stats.rate}% <span className="text-xs text-slate-700"></span></h3>
             </div>
             <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                <Activity size={24} />
@@ -179,7 +179,7 @@ const AttendanceBoard: React.FC = () => {
              }`}
            >
              <LayoutGrid size={14} />
-             Matrix
+             Overall
            </button>
            <button 
              onClick={() => { setViewMode('roster'); setFilter('all'); }}
@@ -188,26 +188,22 @@ const AttendanceBoard: React.FC = () => {
              }`}
            >
              <Users size={14} />
-             Roster
+             today's
            </button>
         </div>
 
         {/* Improved Search Bar */}
         <div className="lg:col-span-4 relative group">
-           <div className="absolute inset-y-0 left-6 flex items-center pointer-events-none">
-             <Search className="text-slate-800 group-focus-within:text-primary transition-colors duration-300" size={18} />
+           <div className="absolute inset-y-0 left-7 flex items-center pointer-events-none">
+             <Search className="text-slate-600 group-focus-within:text-primary transition-colors duration-300" size={18} />
            </div>
            <input 
              type="text" 
-             placeholder="IDENTITY QUERY..." 
-             className="w-full bg-[#080808] border border-white/5 rounded-[2.5rem] pl-16 pr-8 py-4.5 text-[11px] font-black uppercase tracking-[0.2em] text-white placeholder:text-slate-900 outline-none focus:border-primary/50 focus:ring-4 focus:ring-primary/5 transition-all duration-300"
+             placeholder="Enetr roll number or name..." 
+             className="w-full bg-[#080808] border border-white/5 rounded-[2.5rem] pl-18 pr-8 py-4.5 text-[11px] font-black uppercase tracking-[0.2em] text-white placeholder:text-slate-900 outline-none focus:border-primary/50 focus:ring-4 focus:ring-primary/5 transition-all duration-300"
              value={searchTerm}
              onChange={(e) => setSearchTerm(e.target.value)}
            />
-           <div className="absolute right-6 top-1/2 -translate-y-1/2 hidden sm:flex items-center gap-2 px-3 py-1 bg-white/5 rounded-lg border border-white/5">
-              <Binary size={10} className="text-slate-700" />
-              <span className="text-[8px] font-black text-slate-800 uppercase tracking-widest">Protocol V3</span>
-           </div>
         </div>
         
         {/* Improved Filter Chips */}
@@ -215,9 +211,9 @@ const AttendanceBoard: React.FC = () => {
            {viewMode === 'matrix' ? (
              <>
                <button onClick={() => setFilter('all')} className={`flex-1 py-3.5 rounded-3xl text-[8px] font-black uppercase tracking-widest transition-all ${filter === 'all' ? 'bg-primary text-black' : 'text-slate-700 hover:text-slate-300'}`}>All</button>
-               <button onClick={() => setFilter('critical')} className={`flex-1 flex items-center justify-center py-3.5 rounded-3xl transition-all ${filter === 'critical' ? 'bg-rose-500 text-white' : 'text-slate-700 hover:text-slate-300'}`}><AlertTriangle size={14} /></button>
-               <button onClick={() => setFilter('warning')} className={`flex-1 flex items-center justify-center py-3.5 rounded-3xl transition-all ${filter === 'warning' ? 'bg-amber-500 text-black' : 'text-slate-700 hover:text-slate-300'}`}><Filter size={14} /></button>
-               <button onClick={() => setFilter('good')} className={`flex-1 flex items-center justify-center py-3.5 rounded-3xl transition-all ${filter === 'good' ? 'bg-emerald-500 text-white' : 'text-slate-700 hover:text-slate-300'}`}><CheckCircle2 size={14} /></button>
+               <button onClick={() => setFilter('critical')} className={`flex-1 flex items-center justify-center py-3.5 rounded-3xl transition-all ${filter === 'critical' ? 'bg-rose-500 text-white' : 'text-slate-700 hover:text-slate-300'}`}><AlertTriangle size={14} /> <p>0 - 40%</p></button>
+               <button onClick={() => setFilter('warning')} className={`flex-1 flex items-center justify-center py-3.5 rounded-3xl transition-all ${filter === 'warning' ? 'bg-amber-500 text-black' : 'text-slate-700 hover:text-slate-300'}`}><Filter size={14} />40-75%</button>
+               <button onClick={() => setFilter('good')} className={`flex-1 flex items-center justify-center py-3.5 rounded-3xl transition-all ${filter === 'good' ? 'bg-emerald-500 text-white' : 'text-slate-700 hover:text-slate-300'}`}><CheckCircle2 size={14} />above 75%</button>
              </>
            ) : (
              <>
@@ -237,14 +233,14 @@ const AttendanceBoard: React.FC = () => {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-white/[0.02] text-[9px] font-black text-slate-500 uppercase tracking-[0.4em]">
-                <th className="px-10 py-8 border-b border-white/5">#</th>
-                <th className="px-10 py-8 border-b border-white/5">Distributed Node ID</th>
+                <th className="px-10 py-8 border-b border-white/5">Sl.no</th>
+                <th className="px-10 py-8 border-b border-white/5">Student</th>
                 {viewMode === 'matrix' ? (
                   <>
                     <th className="px-10 py-8 border-b border-white/5 text-center">COMP. PROG</th>
                     <th className="px-10 py-8 border-b border-white/5 text-center">DBMS</th>
                     <th className="px-10 py-8 border-b border-white/5 text-center">JAVA FULLSTACK</th>
-                    <th className="px-10 py-8 border-b border-white/5 text-right">AGGR. LOAD %</th>
+                    <th className="px-10 py-8 border-b border-white/5 text-right">Overall %</th>
                   </>
                 ) : (
                   <>
@@ -325,13 +321,13 @@ const AttendanceBoard: React.FC = () => {
            
            <div className="flex items-center gap-10">
               <div className="text-right">
-                 <p className="text-[8px] font-black text-slate-700 uppercase tracking-widest mb-1">Visible Nodes</p>
+                 <p className="text-[8px] font-black text-slate-700 uppercase tracking-widest mb-1">Number of students</p>
                  <p className="text-xl font-black text-white tabular-nums tracking-tighter">{filteredData.length} Count</p>
               </div>
               <div className="w-px h-10 bg-white/10"></div>
               <div className="text-right">
-                 <p className="text-[8px] font-black text-slate-700 uppercase tracking-widest mb-1">Last Sync</p>
-                 <p className="text-xl font-black text-primary tabular-nums tracking-tighter">Just Now</p>
+                 <p className="text-[8px] font-black text-slate-700 uppercase tracking-widest mb-1"></p>
+                 <p className="text-xl font-black text-primary tabular-nums tracking-tighter">Active</p>
               </div>
            </div>
         </div>
@@ -340,7 +336,7 @@ const AttendanceBoard: React.FC = () => {
       {/* Visual Footnote */}
       <div className="px-4 text-center mt-6">
         <p className="text-[9px] font-black text-slate-800 uppercase tracking-[1em]">
-          Institutional Ledger Protocol 3-X Active • Data Integrity Level 4
+          IARE • career development center
         </p>
       </div>
     </div>

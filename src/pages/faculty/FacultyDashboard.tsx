@@ -44,7 +44,7 @@ const FacultyDashboard: React.FC<{ user: User }> = ({ user }) => {
           <LayoutGrid size={24} />
         </div>
         <div>
-          <h1 className="text-3xl font-black text-white tracking-tighter uppercase leading-none">Faculty Hub</h1>
+          <h1 className="text-3xl font-black text-white tracking-tighter uppercase leading-none">DASHBOARD</h1>
           <p className="text-[11px] font-bold text-slate-700 uppercase tracking-[0.3em] mt-1">{user.rollNumber} • HOD OFFICE</p>
         </div>
       </div>
@@ -52,8 +52,6 @@ const FacultyDashboard: React.FC<{ user: User }> = ({ user }) => {
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard label="Total Students" value="1,240" icon={Users} iconBg="bg-blue-500/5" iconColor="text-blue-400" />
-        <StatCard label="Faculty Rank" value="Gold" icon={Trophy} iconBg="bg-amber-500/5" iconColor="text-amber-400" />
-        <StatCard label="Daily Avg" value="82%" icon={Target} iconBg="bg-emerald-500/5" iconColor="text-emerald-400" />
         <StatCard label="Active Classes" value="12" icon={BookOpen} iconBg="bg-purple-500/5" iconColor="text-purple-400" />
       </div>
 
@@ -73,9 +71,9 @@ const FacultyDashboard: React.FC<{ user: User }> = ({ user }) => {
           </div>
           
           <div className="space-y-4">
-            <p className="text-lg font-bold opacity-80 uppercase leading-tight max-w-sm">Execute modular identity verification protocols for active student clusters.</p>
+            <p className="text-lg font-bold opacity-80 uppercase leading-tight max-w-sm">Mark the attendance for classes</p>
             <div className="flex items-center gap-3 text-[12px] font-black uppercase tracking-widest mt-6">
-               Initialize Session <ChevronRight size={18} strokeWidth={3} />
+                <ChevronRight size={18} strokeWidth={3} />
             </div>
           </div>
           
@@ -87,7 +85,7 @@ const FacultyDashboard: React.FC<{ user: User }> = ({ user }) => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <Star size={20} className="text-primary fill-primary" />
-              <h3 className="text-sm font-black text-white uppercase tracking-widest">Elite Cadets</h3>
+              <h3 className="text-sm font-black text-white uppercase tracking-widest">Top Coders</h3>
             </div>
             <button onClick={() => navigate('/leaderboard')} className="text-[10px] font-black text-slate-500 hover:text-white uppercase tracking-widest transition-colors flex items-center gap-2">
               Full Standings <ChevronRight size={14} />
@@ -141,7 +139,7 @@ const FacultyDashboard: React.FC<{ user: User }> = ({ user }) => {
       </div>
 
       <div className="px-2 pt-10">
-        <p className="text-[10px] font-black text-slate-800 uppercase tracking-[0.5em]">Faculty Terminal Trace • Protocol Level 4-G Active</p>
+        <p className="text-[10px] font-black text-slate-800 uppercase tracking-[0.5em]">IARE            • CAREER DEVELOPMENT CENTER</p>
       </div>
 
     </div>
