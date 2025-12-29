@@ -89,7 +89,7 @@ const App: React.FC = () => {
                 <Route path="/settings" element={<SettingsPage user={user} />} />
               </>
             )}
-            <Route path="/" element={<Navigate to="/dashboard" />} />
+            <Route path="/" element={<Navigate to="/login" />} />
           </Route>
         ) : (
           <Route path="*" element={<Navigate to="/login" />} />
