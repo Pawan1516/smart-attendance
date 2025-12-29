@@ -1,0 +1,7 @@
+{
+  "name": "EduPulse Student Dashboard",
+  "description": "A modern, high-performance student analytics and leaderboard dashboard with authentication, real-time performance tracking, and social academic ranking.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
