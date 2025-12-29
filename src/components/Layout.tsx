@@ -67,7 +67,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout }) => {
 
         <div className="flex-1 px-4 py-8 space-y-2 overflow-y-auto custom-scrollbar">
           {navItems.map((item) => {
-            const isActive = location.pathname === item.path || (item.path !== '/dashboard' && location.pathname.startsWith(item.path));
+            const isActive = location.pathname === item.path || (item.path !== '/LoginPage' && location.pathname.startsWith(item.path));
             return (
               <Link
                 key={item.path}
@@ -101,7 +101,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout }) => {
         <div className="lg:hidden h-16 bg-brand-navy border-b border-white/5 flex items-center justify-between px-6 z-[60]">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-white rounded-lg p-1">
-              <img src="https://storage.googleapis.com/educrib/colleges/logos/Institute%20of%20Aeronautical%20Engineering,%20Hyderabad%20Logo.jpg" className="w-full h-full object-contain" alt="IARE" />
+              <img src="https://placehold.co/100x100/png" className="w-full h-full object-contain" alt="IARE" />
             </div>
             <span className="text-xs font-black tracking-widest uppercase">IARE</span>
           </div>

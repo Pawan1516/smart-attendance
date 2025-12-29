@@ -39,7 +39,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
             className="w-full h-full object-contain"
           />
         </div>
-        <h1 className="text-xl font-black text-white tracking-[0.3em] uppercase mb-1">IARE Institution</h1>
+        <h1 className="text-xl font-black text-white tracking-[0.3em] uppercase mb-1">IARE </h1>
         <p className="text-[10px] font-bold text-blue-500/60 uppercase tracking-[0.2em]">CDC - Attendance</p>
         <div className="w-8 h-[2px] bg-primary mt-4 opacity-40 rounded-full"></div>
       </div>

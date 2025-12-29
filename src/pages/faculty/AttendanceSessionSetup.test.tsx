@@ -1,16 +1,19 @@
 
-import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import AttendanceSessionSetup from './AttendanceSessionSetup';
 import { BATCHES, COURSES } from '../../constants';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 
-const mockNavigate = jest.fn();
+const mockNavigate = vi.fn();
 
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
-}));
+vi.mock('react-router-dom', async () => {
+    const actual = await vi.importActual('react-router-dom');
+    return {
+        ...actual,
+        useNavigate: () => mockNavigate,
+    };
+});
 
 const renderComponent = (mode = 'scan') => {
   render(
@@ -41,9 +44,9 @@ describe('AttendanceSessionSetup', () => {
     renderComponent();
     const batchButton = screen.getByText(BATCHES[0]);
     fireEvent.click(batchButton);
-    expect(batchButton).toHaveClass('border-primary');
+    expect(batchButton.closest('button')).toHaveClass('border-primary');
     fireEvent.click(batchButton);
-    expect(batchButton).not.toHaveClass('border-primary');
+    expect(batchButton.closest('button')).not.toHaveClass('border-primary');
   });
 
   it('should select all batches', () => {
@@ -51,7 +54,7 @@ describe('AttendanceSessionSetup', () => {
     const selectAllButton = screen.getByText('Select All');
     fireEvent.click(selectAllButton);
     BATCHES.forEach(batch => {
-      expect(screen.getByText(batch)).toHaveClass('border-primary');
+      expect(screen.getByText(batch).closest('button')).toHaveClass('border-primary');
     });
   });
 
@@ -94,7 +97,7 @@ describe('AttendanceSessionSetup', () => {
     fireEvent.click(screen.getByText('Proceed'));
     const select = screen.getByRole('combobox');
     fireEvent.change(select, { target: { value: COURSES[0] } });
-    const proceedButton = screen.getByText('Proceed');
+    const proceedButton = screen.getByRole('button', { name: /Proceed/i });
     expect(proceedButton).toBeEnabled();
   });
 
@@ -104,7 +107,7 @@ describe('AttendanceSessionSetup', () => {
     fireEvent.click(screen.getByText('Proceed'));
     const select = screen.getByRole('combobox');
     fireEvent.change(select, { target: { value: COURSES[0] } });
-    const proceedButton = screen.getByText('Proceed');
+    const proceedButton = screen.getByRole('button', { name: /Proceed/i });
     fireEvent.click(proceedButton);
     expect(mockNavigate).toHaveBeenCalledWith('/attendance/scan', {
       state: { batches: [BATCHES[0]], course: COURSES[0] },

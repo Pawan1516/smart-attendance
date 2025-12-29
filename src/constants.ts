@@ -4,7 +4,7 @@ import { User, CourseStats, LeaderboardEntry, Session, ClassInfo, TaskItem, Upco
 export const MOCK_USER: User = {
   id: '23951A66C0',
   name: 'KALLURI PAVAN KUMAR',
-  email: '23951a66c0@student.edu',
+  email: '23951a66c0@iare.ac.in',
   rollNumber: '23951A66C0',
   branch: 'CSE (AI&ML)',
   batch: 'SKILLBRIDGE BATCH-3',
@@ -17,13 +17,13 @@ export const MOCK_USER: User = {
 };
 
 export const MOCK_FACULTY: User = {
-  id: 'iare0000',
-  name: 'Kiran kumar',
+  id: 'iare10010',
+  name: '########',
   email: 'iare10010@iare.ac.in',
   rollNumber: 'IARE10010',
   branch: 'CSE (AI&ML)',
   batch: 'HOD OFFICE',
-  avatar: 'https://ui-avatars.com/api/?name=Kiran+KUMAR&background=3b82f6&color=fff&size=256',
+  avatar: 'https://ui-avatars.com/api/?name=#####&background=3b82f6&color=fff&size=256',
   totalScore: 0,
   rank: 0,
   attendance: 0,

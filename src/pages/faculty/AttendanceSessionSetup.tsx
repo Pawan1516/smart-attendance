@@ -99,7 +99,7 @@ const AttendanceSessionSetup: React.FC = () => {
                   {selectedBatches.map(batch => (
                     <div key={batch} className="p-6 bg-white/5 border border-white/5 rounded-3xl flex items-center justify-between">
                        <h5 className="text-sm font-black text-white uppercase tracking-tighter">{batch}</h5>
-                       <span className="text-[8px] font-black text-slate-700 uppercase tracking-widest bg-white/5 px-3 py-1 rounded-full">selectedBatch</span>
+                       <span className="text-[8px] font-black text-slate-700 uppercase tracking-widest bg-white/5 px-3 py-1 rounded-full">Selected</span>
                     </div>
                   ))}
                 </div>
