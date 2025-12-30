@@ -54,7 +54,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout }) => {
         <div className="h-24 flex items-center px-8 mt-4">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center p-2">
-              <img src="https://storage.googleapis.com/educrib/colleges/logos/Institute%20of%20Aeronautical%20Engineering,%20Hyderabad%20Logo.jpg" className="w-full h-full object-contain" alt="IARE" />
+              <img src="https://gyaanarth.com/wp-content/uploads/2022/06/Institute-Of-Aeronautical-Engineering-IARE-Hyderabad.png" className="w-full h-full object-contain" alt="IARE" />
             </div>
             <div>
               <h1 className="text-lg font-black tracking-tighter text-white leading-none">IARE</h1>
@@ -101,7 +101,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout }) => {
         <div className="lg:hidden h-16 bg-brand-navy border-b border-white/5 flex items-center justify-between px-6 z-[60]">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-white rounded-lg p-1">
-              <img src="https://placehold.co/100x100/png" className="w-full h-full object-contain" alt="IARE" />
+              <img src="https://gyaanarth.com/wp-content/uploads/2022/06/Institute-Of-Aeronautical-Engineering-IARE-Hyderabad.png" className="w-full h-full object-contain" alt="IARE" />
             </div>
             <span className="text-xs font-black tracking-widest uppercase">IARE</span>
           </div>

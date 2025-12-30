@@ -24,12 +24,13 @@ import { User } from '../types';
 import { MOCK_LEADERBOARD } from '../constants';
 
 const attendanceData = [
-  { name: 'Tue', value: 65 },
+  { name: 'Mon', value: 65 },
+  { name: 'Tue', value: 72 },
   { name: 'Wed', value: 75 },
   { name: 'Thu', value: 72 },
-  { name: 'Fri', value: 85 },
-  { name: 'Sat', value: 82 },
-  { name: 'Sun', value: 78 },
+  { name: 'Fri', value: 78 },
+  { name: 'Sat', value: 75 },
+  { name: 'Sun', value: 75 },
 ];
 
 const StatCard = ({ label, value, icon: Icon, iconBg = "bg-white/5", iconColor = "text-primary" }: { label: string, value: string | number, icon: any, iconBg?: string, iconColor?: string }) => (
@@ -178,7 +179,7 @@ const DashboardPage: React.FC<{ user: User }> = ({ user }) => {
 
       {/* Footer Branding */}
       <div className="px-2 pt-6">
-        <p className="text-[10px] font-black text-slate-800 uppercase tracking-[0.5em]">Daily Activity Trace • Protocol 3-A Active</p>
+        <p className="text-[10px] font-black text-slate-800 uppercase tracking-[0.5em]">Daily Activity •  Career DEVELOPMENT center</p>
       </div>
 
     </div>

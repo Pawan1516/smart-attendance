@@ -51,7 +51,7 @@ const ScheduleCard: React.FC<{ session: FacultySchedule }> = ({ session }) => {
               </div>
               <div className="flex flex-col">
                 <span className={`text-[10px] font-black uppercase tracking-[0.3em] ${session.color}`}>{session.shortType} MODULE</span>
-                <span className="text-[8px] font-black text-slate-700 uppercase tracking-widest mt-0.5">TARGET: {session.batch}</span>
+                <span className="text-[8px] font-black text-slate-700 uppercase tracking-widest mt-0.5">Batch: {session.batch}</span>
               </div>
             </div>
             
@@ -66,7 +66,7 @@ const ScheduleCard: React.FC<{ session: FacultySchedule }> = ({ session }) => {
               </div>
               <div className="flex items-center gap-2 text-slate-500">
                 <MapPin size={14} className="text-primary/60" />
-                <span className="text-[11px] font-black uppercase tracking-widest">HUB {session.room}</span>
+                <span className="text-[11px] font-black uppercase tracking-widest">Room No: {session.room}</span>
               </div>
               <div className="flex items-center gap-2 text-slate-500">
                 <Users size={14} className="text-primary/60" />
@@ -77,11 +77,8 @@ const ScheduleCard: React.FC<{ session: FacultySchedule }> = ({ session }) => {
 
           <div className="flex flex-col gap-3">
             <button className="px-6 py-3 bg-white/5 border border-white/5 rounded-xl text-[9px] font-black text-slate-500 uppercase tracking-widest flex items-center gap-2 hover:text-white hover:bg-white/10 transition-all group/btn">
-              Prepare Session <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+              Session <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
             </button>
-            <div className="px-6 py-2 bg-emerald-500/5 border border-emerald-500/10 rounded-xl text-center">
-              <span className="text-[8px] font-black text-emerald-500 uppercase tracking-widest">Protocol V3 Ready</span>
-            </div>
           </div>
         </div>
       </div>

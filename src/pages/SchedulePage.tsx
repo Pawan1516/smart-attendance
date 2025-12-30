@@ -90,11 +90,11 @@ const SchedulePage: React.FC = () => {
               <Calendar size={28} />
             </div>
             <div>
-              <h1 className="text-4xl font-black text-white tracking-tighter uppercase leading-none">Temporal Matrix</h1>
+              <h1 className="text-4xl font-black text-white tracking-tighter uppercase leading-none">Today's Schedule</h1>
               <div className="flex items-center gap-3 mt-2">
                 <p className="text-[10px] font-black text-primary uppercase tracking-widest">Sunday, 28 Dec</p>
                 <div className="w-1 h-1 rounded-full bg-slate-800"></div>
-                <p className="text-[10px] font-black text-slate-600 uppercase tracking-widest">Institutional Chrono-Log</p>
+                <p className="text-[10px] font-black text-slate-600 uppercase tracking-widest">session</p>
               </div>
             </div>
           </div>

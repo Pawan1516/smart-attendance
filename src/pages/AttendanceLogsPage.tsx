@@ -96,9 +96,9 @@ const AttendanceLogsPage: React.FC = () => {
               <div className="p-3 bg-primary/10 rounded-2xl border border-primary/20">
                  <History className="text-primary" size={24} />
               </div>
-              <h2 className="text-3xl font-black text-white tracking-tighter uppercase leading-none">Activity Ledger</h2>
+              <h2 className="text-3xl font-black text-white tracking-tighter uppercase leading-none">My Activity</h2>
            </div>
-           <p className="text-[10px] font-black text-slate-600 uppercase tracking-[0.4em] ml-1">Live Institutional Node Trace</p>
+           <p className="text-[10px] font-black text-slate-600 uppercase tracking-[0.4em] ml-1"></p>
          </div>
 
          <button 
